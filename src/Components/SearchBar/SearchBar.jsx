@@ -7,11 +7,13 @@ const SearchBar = ({ getAnimeList }) => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    searchAnimeFetcher(inputValue).then(response => {
-      const filteredSearchResult = SearchFilter(response);
-      getAnimeList(filteredSearchResult);
-    });
-    setInputValue("");
+    if (inputValue.length !== 0) {
+      searchAnimeFetcher(inputValue).then(response => {
+        const filteredSearchResult = SearchFilter(response);
+        getAnimeList(filteredSearchResult);
+      });
+      setInputValue("");
+    }
   };
 
   const handleChange = e => {

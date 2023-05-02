@@ -3,22 +3,32 @@ import { AiFillCaretLeft, AiFillCaretRight } from "react-icons/ai";
 
 const ImageSlider = ({ airingAnimeList }) => {
   const [imageState, setImageState] = useState(0);
+  const [animateImageState, setAnimateImageState] = useState(true);
 
   const airingAnimeListSrcArray = [];
-
   airingAnimeList.forEach(anime =>
-    airingAnimeListSrcArray.push(anime.images.jpg.large_image_url),
+    airingAnimeListSrcArray.push(anime.images.webp.large_image_url),
   );
 
-  const changeImageInterval = setInterval(() => {
-    imageState < airingAnimeListSrcArray.length - 1
-      ? setImageState(imageState + 1)
-      : setImageState(0);
-    clearInterval(changeImageInterval);
-  }, 1500);
+  const changeImageInterval =
+    animateImageState &&
+    setInterval(() => {
+      imageState < airingAnimeListSrcArray.length - 1
+        ? setImageState(imageState + 1)
+        : setImageState(0);
+      clearInterval(changeImageInterval);
+    }, 1000);
 
   return (
-    <div className="relative h-full rounded-3xl cursor-pointer">
+    <div
+      onMouseOver={() => {
+        console.log("MouseOver");
+        setAnimateImageState(false);
+        clearInterval(changeImageInterval);
+      }}
+      onMouseOut={() => setAnimateImageState(true)}
+      className="relative h-full rounded-3xl cursor-pointer"
+    >
       <AiFillCaretLeft
         onClick={() => {
           imageState === 0
