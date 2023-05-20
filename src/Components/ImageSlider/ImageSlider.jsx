@@ -7,7 +7,7 @@ const ImageSlider = ({ airingAnimeList }) => {
 
   const airingAnimeListSrcArray = [];
   airingAnimeList.forEach(anime =>
-    airingAnimeListSrcArray.push(anime.images.webp.large_image_url),
+    airingAnimeListSrcArray.push(anime.images.webp.large_image_url)
   );
 
   const changeImageInterval =
@@ -17,7 +17,7 @@ const ImageSlider = ({ airingAnimeList }) => {
         ? setImageState(imageState + 1)
         : setImageState(0);
       clearInterval(changeImageInterval);
-    }, 1000);
+    }, 1500);
 
   return (
     <div
