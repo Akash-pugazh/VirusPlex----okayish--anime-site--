@@ -6,15 +6,17 @@ import {
 } from "react-router-dom";
 
 import Layout from "./Components/Layout";
-import MainPage from "./Pages/MainPage";
+import MainPage, { loader as MainPageLoader } from "./Pages/MainPage";
 import LoginPage from "./Pages/LoginPage";
+import AnimePage from "./Pages/AnimePage";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<Layout />}>
-        <Route index element={<MainPage />} />
+        <Route index element={<MainPage />} loader={MainPageLoader} />
         <Route path="Login" element={<LoginPage />} />
+        <Route path="Anime" element={<AnimePage />} />
       </Route>
     )
   );

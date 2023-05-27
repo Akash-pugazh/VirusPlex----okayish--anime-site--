@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
-  scroll-behavior: smooth;
-}
 
 @font-face {
   font-family: "share";
   src: url("./Assets/Fonts/Share.ttf");
+}
+
+body::-webkit-scrollbar{
+  display: none;
 }

@@ -1,0 +1,16 @@
+#loginLink::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 0px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: black;
+  transition: all 0.3s 0.1s;
+}
+
+#loginLink:hover::after {
+  width: 100%;
+}
