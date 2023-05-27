@@ -1,11 +1,11 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import "../Styles/NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav className="w-full p-4 fixed z-10 flex justify-between items-center">
+    <nav className="w-full p-4 fixed z-10 flex justify-between items-center bg-slate-200 bg-opacity-50">
       <Link
         to="/"
         className="select-none text-black capitalize text-4xl font-share dark:text-gray-100"
@@ -21,20 +21,34 @@ const NavBar = () => {
         />
       </Form> */}
       <section>
-        <Link
-          className="ml-4 p-1 text-black rounded-md font-semibold relative"
-          id="loginLink"
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              borderBottomWidth: isActive ? "2px" : "",
+              borderBottomColor: isActive ? "black" : "",
+              borderStyle: isActive ? "solid" : "",
+            };
+          }}
+          className="ml-4 p-1 text-black font-semibold relative"
+          id="NavLink"
           to="Anime"
         >
           <span>Anime</span>
-        </Link>
-        <Link
-          className="ml-4 p-1 text-black rounded-md font-semibold relative"
-          id="loginLink"
+        </NavLink>
+        <NavLink
+          style={({ isActive }) => {
+            return {
+              borderBottomWidth: isActive ? "2px" : "",
+              borderBottomColor: isActive ? "black" : "",
+              borderStyle: isActive ? "solid" : "",
+            };
+          }}
+          className="ml-4 p-1 text-black  font-semibold relative"
+          id="NavLink"
           to="Login"
         >
           <span>Login</span>
-        </Link>
+        </NavLink>
       </section>
     </nav>
   );
