@@ -8,7 +8,7 @@ import {
 import Layout from "./Components/Layout";
 import MainPage, { loader as MainPageLoader } from "./Pages/MainPage";
 import LoginPage from "./Pages/LoginPage";
-import AnimePage from "./Pages/AnimePage";
+import AnimePage, { action as AnimeSearchAction } from "./Pages/AnimePage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -16,7 +16,11 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<MainPage />} loader={MainPageLoader} />
         <Route path="Login" element={<LoginPage />} />
-        <Route path="Anime" element={<AnimePage />} />
+        <Route
+          path="Anime"
+          element={<AnimePage />}
+          action={AnimeSearchAction}
+        />
       </Route>
     )
   );

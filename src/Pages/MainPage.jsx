@@ -1,4 +1,4 @@
-import testApi from "../Api";
+import { testApi } from "../Api";
 import { useLoaderData } from "react-router-dom";
 
 export async function loader() {
@@ -8,7 +8,6 @@ export async function loader() {
 
 const MainPage = () => {
   const { data } = useLoaderData();
-  console.log(data)
   const renderMainPageContent = data.map(data => {
     const id = data.id;
     const large = data.attributes?.posterImage.large;

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default async function testApi() {
+export async function testApi() {
   const URL = "https://kitsu.io/api/edge/trending/anime";
   try {
     const response = await axios.get(URL, {
@@ -8,12 +8,27 @@ export default async function testApi() {
         Accept: "application/vnd.api+json",
         "Content-Type": "application/vnd.api+json",
       },
-      params: {
-        q: "Naruto",
-      },
     });
-    return response.data
+    return response.data;
   } catch (err) {
     console.error(err);
   }
+}
+
+export async function searchAnime(searchValue) {
+  const URL = "https://api.jikan.moe/v4/anime";
+  try {
+    const response = await axios.get(URL, {
+      params: {
+        q:searchValue,
+      },
+      headers: {
+        Accept: "application/vnd.api+json",
+        "Content-Type": "application/vnd.api+json",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  } 
 }

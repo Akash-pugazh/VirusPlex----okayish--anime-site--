@@ -13,7 +13,7 @@ const Card = ({ animeName , animeImage, description }) => {
           <h3 className="font-semibold text-xl text-gray-700 my-1 dark:text-gray-300">
             {animeName}
           </h3>
-          <p className="max-h-20 overflow-y-auto leading-5 text-gray-500 text-sm dark:text-gray-400">
+          <p className="max-h-20 overflow-y-hidden leading-5 text-gray-500 text-sm dark:text-gray-400">
             {description}
           </p>
         </div>
