@@ -9,6 +9,9 @@ import Layout from "./Components/Layout";
 import MainPage, { loader as MainPageLoader } from "./Pages/MainPage";
 import LoginPage from "./Pages/LoginPage";
 import AnimePage, { action as AnimeSearchAction } from "./Pages/AnimePage";
+import AnimeDetails, {
+  loader as AnimeDetailsLoader,
+} from "./Pages/AnimeDetails";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -20,6 +23,11 @@ const App = () => {
           path="Anime"
           element={<AnimePage />}
           action={AnimeSearchAction}
+        />
+        <Route
+          path="AnimeDetails/:AnimeId"
+          element={<AnimeDetails />}
+          loader={AnimeDetailsLoader}
         />
       </Route>
     )

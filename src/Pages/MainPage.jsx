@@ -12,10 +12,10 @@ const MainPage = () => {
     const id = data.id;
     const large = data.attributes?.posterImage.large;
     const en = data.attributes?.titles.en;
-    return large && en ? (
+    return id && large && en ? (
       <section
         key={id}
-        className="section1 h-full flex justify-center items-center"
+        className="h-full flex justify-center items-center"
       >
         <img className=" object-cover w-full h-full" src={large} alt={en} />
       </section>
@@ -24,11 +24,7 @@ const MainPage = () => {
     );
   });
 
-  return (
-    <main className="h-screen mainPageWrapper" id="mainPageWrapper">
-      {renderMainPageContent}
-    </main>
-  );
+  return <main className="h-[90%]">{renderMainPageContent}</main>;
 };
 
 export default MainPage;

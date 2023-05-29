@@ -20,15 +20,21 @@ export async function searchAnime(searchValue) {
   try {
     const response = await axios.get(URL, {
       params: {
-        q:searchValue,
-      },
-      headers: {
-        Accept: "application/vnd.api+json",
-        "Content-Type": "application/vnd.api+json",
+        q: searchValue,
       },
     });
     return response.data;
   } catch (error) {
     console.error(error);
-  } 
+  }
+}
+
+export async function getAnimeDetails(AnimeId) {
+  const URL = `https://api.jikan.moe/v4/anime/${AnimeId}`;
+  try {
+    const response = await axios.get(URL);
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
 }

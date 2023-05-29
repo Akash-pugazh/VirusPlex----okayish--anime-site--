@@ -5,16 +5,16 @@ import "../Styles/NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav className="w-full p-4 fixed z-10 flex justify-between items-center bg-slate-200 bg-opacity-50">
+    <nav className=" h-[10%] w-full p-4 flex justify-between items-center">
       <Link
         to="/"
-        className="select-none text-black capitalize text-4xl font-share dark:text-gray-100"
+        className="select-none text-black capitalize text-4xl font-share"
       >
         ViRuS Plex
       </Link>
       {/* <Form>
         <input
-          className="select-none transition ease-linear duration-400 border border-black focus:outline-none focus:placeholder:text-transparent py-1 pl-2 pr-10 rounded-md dark:border-gray-400 dark:text-white dark:bg-transparent"
+        className="select-none transition ease-linear duration-400 border border-black focus:outline-none focus:placeholder:text-transparent py-1 pl-2 pr-10 rounded-md dark:border-gray-400 dark:text-white dark:bg-transparent"
           placeholder="Search 🔍"
           type="text"
           name="search"

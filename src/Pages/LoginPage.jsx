@@ -2,7 +2,7 @@
 
 const LoginPage = () => {
   return (
-    <main className="h-screen grid place-items-center">
+    <main className="h-[90%] grid place-items-center">
       <form className="m-5 p-10 border border-black rounded-lg flex flex-col items-center justify-center hover:bg-pink-300 transition delay-50 duration-500">
         <h1 className="font-bold text-xl mb-10">Sign in to your account</h1>
         <label htmlFor="email" className="font-semibold text-xl ">
