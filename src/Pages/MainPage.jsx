@@ -24,7 +24,7 @@ const MainPage = () => {
     );
   });
 
-  return <main className="h-[90%]">{renderMainPageContent}</main>;
+  return <main className="h-full">{renderMainPageContent}</main>;
 };
 
 export default MainPage;

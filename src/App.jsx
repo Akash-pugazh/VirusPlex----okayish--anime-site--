@@ -12,6 +12,10 @@ import AnimePage, { action as AnimeSearchAction } from "./Pages/AnimePage";
 import AnimeDetails, {
   loader as AnimeDetailsLoader,
 } from "./Pages/AnimeDetails";
+import TrendingPage from "./Pages/TrendingPage";
+import PopularPage from "./Pages/PopularPage";
+import AiringPage from "./Pages/AiringPage";
+import AnimeSections from "./Pages/AnimeSections";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -19,11 +23,12 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<MainPage />} loader={MainPageLoader} />
         <Route path="Login" element={<LoginPage />} />
-        <Route
-          path="Anime"
-          element={<AnimePage />}
-          action={AnimeSearchAction}
-        />
+        <Route path="Anime" element={<AnimePage />} action={AnimeSearchAction}>
+          <Route index element={<AnimeSections />} />
+          <Route path="Trending🔥" element={<TrendingPage />} />
+          <Route path="Popular🪄" element={<PopularPage />} />
+          <Route path="Airing👻" element={<AiringPage />} />
+        </Route>
         <Route
           path="AnimeDetails/:AnimeId"
           element={<AnimeDetails />}

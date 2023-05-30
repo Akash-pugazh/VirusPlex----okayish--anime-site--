@@ -21,6 +21,7 @@ export async function searchAnime(searchValue) {
     const response = await axios.get(URL, {
       params: {
         q: searchValue,
+        limit: 10,
       },
     });
     return response.data;

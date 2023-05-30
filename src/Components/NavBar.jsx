@@ -5,7 +5,7 @@ import "../Styles/NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav className=" h-[10%] w-full p-4 flex justify-between items-center">
+    <nav className=" h-[10%] fixed w-full p-4 flex justify-between items-center z-50 bg-white">
       <Link
         to="/"
         className="select-none text-black capitalize text-4xl font-share"
