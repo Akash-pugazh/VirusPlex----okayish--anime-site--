@@ -39,3 +39,50 @@ export async function getAnimeDetails(AnimeId) {
     console.error(error);
   }
 }
+
+export async function getTopAnime() {
+  const URL = "https://api.jikan.moe/v4/top/anime";
+  try {
+    const response = await axios.get(URL, {
+      params: {
+        limit: 10,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getTrendingAnime() {}
+
+export async function getPopularAnime() {
+  const URL = "https://api.jikan.moe/v4/anime";
+  try {
+    const response = await axios.get(URL, {
+      params: {
+        limit: 10,
+        order: "popularity",
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export async function getAiringAnime() {
+  const URL = "https://api.jikan.moe/v4/anime";
+  try {
+    const response = await axios.get(URL, {
+      params: {
+        limit: 10,
+        status: "airing",
+        start_data: 2023,
+      },
+    });
+    return response.data;
+  } catch (error) {
+    console.error(error);
+  }
+}

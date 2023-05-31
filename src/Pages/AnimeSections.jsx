@@ -1,6 +1,28 @@
 import React from "react";
 import AnimeSliders from "../Components/AnimeSliders";
+// import { useLoaderData } from "react-router-dom";
+
+// import { getTopAnime, getAiringAnime, getPopularAnime } from "../Api";
+
+export async function loader() {
+  // const apiCalls = [getTopAnime(), getAiringAnime(), getPopularAnime()]
+  // const { data: topAnimeData } = await getTopAnime();
+  // const { data: airingAnimeData } = await getAiringAnime();
+  // const { data: popularAnimedata } = await getPopularAnime();
+  // await Promise.all(apiCalls)
+  // return {
+  //   topAnimeData,
+  //   airingAnimeData,
+  //   popularAnimedata,
+  // };
+  return null
+}
+
+
+
 const AnimeSections = () => {
+  // const { topAnimeData, airingAnimeData, popularAnimedata } = useLoaderData();
+
   const dummySliderContent = [
     { id: 1, name: "Akash" },
     { id: 2, name: "Akash" },
@@ -8,9 +30,9 @@ const AnimeSections = () => {
   ];
   return (
     <div>
-      <section className="Trending">
+      <section className="Top">
         <AnimeSliders
-          sliderTitle="Trending🔥"
+          sliderTitle="Top📈"
           sliderDataProps={dummySliderContent}
         />
       </section>

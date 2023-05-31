@@ -6,8 +6,6 @@ import { Outlet } from "react-router-dom";
 import { searchAnime } from "../Api";
 import Card from "../Components/Card/Card";
 
-import AnimeSections from "./AnimeSections";
-
 export async function action({ request }) {
   const formData = await request.formData();
   const searchValue = formData.get("search");
